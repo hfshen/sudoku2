@@ -578,7 +578,7 @@ Sudoku.prototype.drawBoard = function () {
   var sudoku_board = $('<div></div>').addClass('sudoku_board');
   var sudoku_statistics = $('<div></div>').
   addClass('statistics').
-  html('<b>Cells:</b> <span class="cells_complete">' + this.cellsComplete + '/' + this.cellsNr + '</span> <b>Time:</b> <span class="time">' + this.secondsElapsed + '</span>');
+  html('<b>격자:</b> <span class="cells_complete">' + this.cellsComplete + '/' + this.cellsNr + '</span> <b>시간:</b> <span class="time">' + this.secondsElapsed + '</span>');
 
   $('#' + this.id).empty();
 
