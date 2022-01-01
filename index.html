@@ -41,7 +41,7 @@ body {
 
 /* board */
 .sudoku_board {
-    margin:6px auto;
+    margin:20px;
   
     overflow: hidden;
     
@@ -171,8 +171,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 0%;
+    height: 0%;
     
      -webkit-user-select: none;  
      -moz-user-select: none;    
@@ -185,7 +185,7 @@ body {
     position:absolute;        
     width:50%;        
     color:white;
-    background-color: rgba(127, 140, 141, 0.7);
+    background-color: rgba(231, 253, 255, 0.7);
     box-shadow: 0px 0px 5px 5px #bdc3c7;
 }
 
@@ -578,7 +578,7 @@ Sudoku.prototype.drawBoard = function () {
   var sudoku_board = $('<div></div>').addClass('sudoku_board');
   var sudoku_statistics = $('<div></div>').
   addClass('statistics').
-  html('<b>격자:</b> <span class="cells_complete">' + this.cellsComplete + '/' + this.cellsNr + '</span> <b>시간:</b> <span class="time">' + this.secondsElapsed + '</span>');
+  html('<b>Cells:</b> <span class="cells_complete">' + this.cellsComplete + '/' + this.cellsNr + '</span> <b>Time:</b> <span class="time">' + this.secondsElapsed + '</span>');
 
   $('#' + this.id).empty();
 
@@ -650,7 +650,7 @@ Sudoku.prototype.resizeWindow = function () {
 
   //adjust the board
   var b_pos = $('#' + this.id + ' .sudoku_board').offset(),
-  b_dim = { w: $('#' + this.id + ' .sudoku_board').width(), h: $('#' + this.id + ' .sudoku_board').height() },
+  b_dim = { w: $('#' + this.id + ' .sudoku_board').width(), h: $('#' + this.id + ' .sudoku_board').height()},
   s_dim = { w: $('#' + this.id + ' .statistics').width(), h: $('#' + this.id + ' .statistics').height() };
 
   var screen_wr = screen.w + s_dim.h + b_pos.top + 10;
@@ -678,7 +678,7 @@ Sudoku.prototype.resizeWindow = function () {
   //adjust console
   b_dim = { w: $('#' + this.id + ' .sudoku_board').width(), h: $('#' + this.id + ' .sudoku_board').width() };
   b_pos = $('#' + this.id + ' .sudoku_board').offset();
-  c_dim = { w: $('#' + this.id + ' .board_console').width(), h: $('#' + this.id + ' .board_console').height() };
+  c_dim = { w: $('#' + this.id + ' .board_console').width() -1920, h: $('#' + this.id + ' .board_console').height() };
 
   var c_pos_new = { left: b_dim.w / 2 - c_dim.w / 2 + b_pos.left, top: b_dim.h / 2 - c_dim.h / 2 + b_pos.top };
   $('#' + this.id + ' .board_console').css({ 'left': c_pos_new.left, 'top': c_pos_new.top });
@@ -724,7 +724,7 @@ Sudoku.prototype.showConsole = function (cell) {
 Hide console
 */
 Sudoku.prototype.hideConsole = function (cell) {
-  $('#' + this.id + ' .board_console_container').hide();
+  $('#' + this.id + ' .board_console_container');
   return this;
 };
 
