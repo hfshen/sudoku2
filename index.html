@@ -25,7 +25,7 @@ H1 {
     background:black;
     color:white;
     margin:0px 0px 2px 0px;
-    font-size:20px;
+    font-size:10px;
     padding:2px 1px 5px 1px;
     text-align:center;    
 }
@@ -41,7 +41,7 @@ body {
 
 /* board */
 .sudoku_board {
-    margin:20px;
+    margin:35px;
   
     overflow: hidden;
     
@@ -54,7 +54,7 @@ body {
 }
 
 .sudoku_board .cell {    
-    width:11.11%;    
+    width:11%;     /* 11.11% */
     display: inline-block;    
     float:left;
     cursor:pointer;    
@@ -324,7 +324,7 @@ body {
 
 @media all and (orientation:landscape) and (min-height: 640px){
     h1 { font-size:50px; }
-    .statistics { font-size:30px; }
+    .statistics { font-size:20px; }
     .sudoku_board .cell span { font-size:50px; }
     .board_console .num { font-size:50px; }
 }
